@@ -47,13 +47,14 @@ UInt64 MergeTreeMutationEntry::parseFileName(const String & file_name_)
                     file_name_);
 }
 
-MergeTreeMutationEntry::MergeTreeMutationEntry(MutationCommands commands_, DiskPtr disk_, const String & path_prefix_, UInt64 tmp_number,
-                                               const TransactionID & tid_, const WriteSettings & settings)
+MergeTreeMutationEntry::MergeTreeMutationEntry(MutationCommands commands_, DiskPtr disk_, const String & path_prefix_, const String & author_,
+                                               UInt64 tmp_number, const TransactionID & tid_, const WriteSettings & settings)
     : create_time(time(nullptr))
     , commands(std::make_shared<MutationCommands>(std::move(commands_)))
     , disk(std::move(disk_))
     , path_prefix(path_prefix_)
     , file_name("tmp_mutation_" + toString(tmp_number) + ".txt")
+    , author(author_)
     , is_temp(true)
     , tid(tid_)
 {
