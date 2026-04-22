@@ -33,6 +33,7 @@ struct ReplicatedMergeTreeMutationEntry
 
     /// Replica which initiated mutation
     String source_replica;
+    String author;
 
     /// Acquired block numbers
     /// partition_id -> block_number
@@ -44,6 +45,7 @@ struct ReplicatedMergeTreeMutationEntry
 
     /// Mutation commands which will give to MUTATE_PART entries
     MutationCommands commands;
+    String author;
 
     /// Version of metadata. Not equal to -1 only if this mutation
     /// was created by ALTER MODIFY/DROP queries.

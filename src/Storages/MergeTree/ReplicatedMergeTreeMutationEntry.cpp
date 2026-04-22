@@ -14,6 +14,7 @@ void ReplicatedMergeTreeMutationEntry::writeText(WriteBuffer & out) const
     out << "format version: 1\n"
         << "create time: " << LocalDateTime(create_time ? create_time : time(nullptr), DateLUT::serverTimezoneInstance()) << "\n"
         << "source replica: " << source_replica << "\n"
+        << "author: " << author << "\n"
         << "block numbers count: " << block_numbers.size() << "\n";
 
     for (const auto & kv : block_numbers)
@@ -43,6 +44,7 @@ void ReplicatedMergeTreeMutationEntry::readText(ReadBuffer & in)
         create_time_dt.hour(), create_time_dt.minute(), create_time_dt.second());
 
     in >> "source replica: " >> source_replica >> "\n";
+    in >> "author: " >> author >> "\n";
 
     size_t count;
     in >> "block numbers count: " >> count >> "\n";
