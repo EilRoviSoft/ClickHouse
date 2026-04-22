@@ -45,7 +45,6 @@ struct ReplicatedMergeTreeMutationEntry
 
     /// Mutation commands which will give to MUTATE_PART entries
     MutationCommands commands;
-    String author;
 
     /// Version of metadata. Not equal to -1 only if this mutation
     /// was created by ALTER MODIFY/DROP queries.

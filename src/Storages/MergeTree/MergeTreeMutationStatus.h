@@ -30,7 +30,6 @@ struct MergeTreeMutationStatus
 /// NOLINTBEGIN(readability-redundant-string-init)
     String id = "";
     String command = "";
-    String author = "";
     time_t create_time = 0;
     String author = "";
     std::map<String, Int64> block_numbers{};
