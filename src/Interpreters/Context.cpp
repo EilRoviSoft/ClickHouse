@@ -1482,11 +1482,11 @@ std::unordered_map<Context::WarningType, PreformattedMessage> Context::getWarnin
             if (auto limit = shared->server_settings[ServerSetting::max_replicated_table_num_to_throw]; limit > shared->max_replicated_table_num_to_warn.load())
                 common_warnings[Context::WarningType::MAX_ATTACHED_REPLICATED_TABLES] = PreformattedMessage::create(
                     "The number of attached replicated tables ({}) exceeds the warning limit of {}. You will not be able to create new replicated tables once the limit of {} is reached.",
-                    attached_tables, shared->max_replicated_table_num_to_warn.load(), limit.value);
+                    attached_replicated_tables, shared->max_replicated_table_num_to_warn.load(), limit.value);
             else
                 common_warnings[Context::WarningType::MAX_ATTACHED_REPLICATED_TABLES] = PreformattedMessage::create(
                     "The number of attached replicated tables ({}) exceeds the warning limit of {}.",
-                    attached_tables, shared->max_replicated_table_num_to_warn.load());
+                    attached_replicated_tables, shared->max_replicated_table_num_to_warn.load());
         }
 
         if (attached_views > static_cast<Int64>(shared->max_view_num_to_warn))
