@@ -30,7 +30,6 @@ void ReplicatedMergeTreeMutationEntry::writeText(WriteBuffer & out) const
 
     out << "alter version: ";
     out << alter_version;
-
 }
 
 void ReplicatedMergeTreeMutationEntry::readText(ReadBuffer & in)
@@ -44,7 +43,8 @@ void ReplicatedMergeTreeMutationEntry::readText(ReadBuffer & in)
         create_time_dt.hour(), create_time_dt.minute(), create_time_dt.second());
 
     in >> "source replica: " >> source_replica >> "\n";
-    in >> "author: " >> author >> "\n";
+    if (checkString("author: ", in))
+        in >> author >> "\n";
 
     size_t count;
     in >> "block numbers count: " >> count >> "\n";
