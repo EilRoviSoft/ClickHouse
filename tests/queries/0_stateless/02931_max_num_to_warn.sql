@@ -72,7 +72,7 @@ CREATE DICTIONARY IF NOT EXISTS test_max_num_to_warn_02931.test_max_num_to_warn_
 SOURCE(CLICKHOUSE(DB 'test_max_num_to_warn_02931' TABLE 'test_max_num_to_warn_10'))LAYOUT(FLAT()) LIFETIME(MIN 0 MAX 1000);
 
 CREATE DICTIONARY IF NOT EXISTS test_max_replicated_num_to_warn_02931.test_max_num_to_warn_dict_1 (id Int32, str String) PRIMARY KEY id
-SOURCE(CLICKHOUSE(DB 'test_max_replicated_num_to_warn_02931 ' TABLE 'test_max_num_to_warn_1'))LAYOUT(FLAT()) LIFETIME(MIN 0 MAX 1000);
+SOURCE(CLICKHOUSE(DB 'test_max_replicated_num_to_warn_02931' TABLE 'test_max_num_to_warn_1'))LAYOUT(FLAT()) LIFETIME(MIN 0 MAX 1000);
 CREATE DICTIONARY IF NOT EXISTS test_max_replicated_num_to_warn_02931.test_max_num_to_warn_dict_2 (id Int32, str String) PRIMARY KEY id
 SOURCE(CLICKHOUSE(DB 'test_max_replicated_num_to_warn_02931' TABLE 'test_max_num_to_warn_2'))LAYOUT(FLAT()) LIFETIME(MIN 0 MAX 1000);
 CREATE DICTIONARY IF NOT EXISTS test_max_replicated_num_to_warn_02931.test_max_num_to_warn_dict_3 (id Int32, str String) PRIMARY KEY id
