@@ -131,7 +131,7 @@ INSERT INTO test_max_replicated_num_to_warn_02931.test_max_num_to_warn_11 VALUES
 SELECT replaceRegexpAll(message, '\(\d+\)', '_'), message_format_string FROM system.warnings WHERE message LIKE 'The number of%' ORDER BY message;
 
 DROP DATABASE IF EXISTS test_max_num_to_warn_02931;
- DROP DATABASE IF EXISTS test_max_replicated_num_to_warn_02931;
+DROP DATABASE IF EXISTS test_max_replicated_num_to_warn_02931;
 DROP DATABASE IF EXISTS test_max_num_to_warn_1;
 DROP DATABASE IF EXISTS test_max_num_to_warn_2;
 DROP DATABASE IF EXISTS test_max_num_to_warn_3;
