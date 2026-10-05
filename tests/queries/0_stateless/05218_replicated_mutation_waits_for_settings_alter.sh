@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Tags: zookeeper, no-parallel, no-replicated-database
-# Tag no-parallel: uses failpoints, which affect the whole server.
+# Tags: zookeeper, no-parallel, no-fasttest, no-replicated-database
+# Tag no-parallel, no-fasttest: uses failpoints, which affect the whole server.
 # Tag no-replicated-database: the durable metadata commit lives in ZooKeeper there and follows a different path.
 
 # A local `ALTER TABLE ... MODIFY SETTING` applies the new settings in memory before it writes the durable

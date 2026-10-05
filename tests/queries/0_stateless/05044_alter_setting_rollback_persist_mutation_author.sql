@@ -1,5 +1,5 @@
--- Tags: zookeeper, no-parallel, no-replicated-database
--- Tag no-parallel: uses a failpoint, which affects the whole server.
+-- Tags: zookeeper, no-parallel, no-fasttest, no-replicated-database
+-- Tag no-parallel, no-fasttest: uses a failpoint, which affects the whole server.
 -- Tag no-replicated-database: the durable metadata commit lives in ZooKeeper there and follows a different path.
 
 -- `persist_mutation_author` gates the format of the serialized mutation entries, so a settings `ALTER`
